@@ -1,3 +1,5 @@
+
+
 var topDestinations = ["Singapore", "Thailand", "China", "Germany", "HongKong"];
 
             function renderButtons() {
@@ -5,7 +7,7 @@ var topDestinations = ["Singapore", "Thailand", "China", "Germany", "HongKong"];
 
                 $("#buttons-view").empty();
 
-                for (var i = 0; i < movies.length; i++) {
+                for (var i = 0; i < destination.length; i++) {
 
 
                     var a = $("<button>");
@@ -17,19 +19,16 @@ var topDestinations = ["Singapore", "Thailand", "China", "Germany", "HongKong"];
             }
 
             $("button").on("click", function() {
-                // In this case, the "this" keyword refers to the button that was clicked
-                var person = $(this).attr("data-person");
+                var person = $(this).attr("data-destination");
           
-                // Constructing a URL to search Giphy for the name of the person who said the quote
                 var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-                  person + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
+                  destination + "&api_key=4iN4egUVS1L7wWP1Uc72DV5lPN6Ncjpz";
           
-                // Performing our AJAX GET request
                 $.ajax({
                   url: queryURL,
                   method: "GET"
                 })
-                
+
                 renderButtons();
             });
 
